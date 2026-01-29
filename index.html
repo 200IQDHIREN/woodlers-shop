@@ -182,6 +182,20 @@
             updateCart();
         }
 
+        function updateQty(index, val) {
+            let cleanVal = parseInt(val);
+
+            if (cleanVal < 1) {
+                alert("Quantity must be at least 1");
+                cleanVal = 1;
+            }
+
+            cart[index].qty = cleanVal;
+            updateCart();
+        }
+
+        
+
         // ---------------------------------------------------------
         // VULNERABILITY #3: API RESOURCE EXHAUSTION
         // ---------------------------------------------------------
@@ -223,3 +237,4 @@
 </body>
 
 </html>
+
